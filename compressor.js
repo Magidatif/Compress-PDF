@@ -95,7 +95,7 @@ class PDFCompressorEngine {
   }
 
   /**
-   * Adaptive Perceptual Compression (Lossless vector + Smart high-DPI image re-encoding)
+   * Adaptive Perceptual Compression (Lossless vector + high-DPI image re-encoding)
    */
   async compressAdaptive(arrayBuffer, originalSize, { quality, scale, grayscale, removeMetadata }, onProgress) {
     const { PDFDocument } = window.PDFLib;
@@ -113,8 +113,8 @@ class PDFCompressorEngine {
       newPdfDoc.setAuthor('');
       newPdfDoc.setSubject('');
       newPdfDoc.setKeywords([]);
-      newPdfDoc.setProducer('Smart PDF Compressor');
-      newPdfDoc.setCreator('Smart PDF Compressor');
+      newPdfDoc.setProducer('PDF Optimizer');
+      newPdfDoc.setCreator('PDF Optimizer');
     }
 
     let firstPageOrigPreview = null;

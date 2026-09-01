@@ -1,13 +1,13 @@
 /**
- * Smart PDF Compressor - Application Controller
+ * Professional PDF Compressor - Application Controller
  */
 
 // Bilingual Localization Dictionary
 const translations = {
   ar: {
-    title: 'ضاغط PDF الذكي',
-    tagline: 'Smart Extreme PDF Compressor',
-    heroBadge: 'تقنية الضغط الذكي التكيفي 2026',
+    title: 'ضاغط PDF الاحترافي',
+    tagline: 'Extreme PDF Compression Engine',
+    heroBadge: 'محرك ضغط متقدم وعالي الدقة',
     heroTitle: 'ضغط ملفات PDF <span class="text-gradient">لأقصى درجة ممكنة</span> مع بقاء الجودة فائقة الوضوح',
     heroDesc: 'قلّل حجم مستنداتك وكتبك وملفاتك بنسبة تصل إلى 85% فورياً، مع الحفاظ الكامل على دقة النصوص، الرسوم والصور.',
     privacyBadge: 'خصوصية وأمان 100% — المعالجة تتم محلياً بالكامل على متصفحك دون رفع الملفات لأي خادم.',
@@ -15,7 +15,7 @@ const translations = {
     dropSubtitle: 'أو انقر لاختيار ملف أو عدة ملفات معاً من جهازك',
     browseBtn: 'اختيار ملفات PDF',
     strategyTitle: 'مستوى واستراتيجية الضغط',
-    presetSmart: 'ضغط ذكي فائق (Smart)',
+    presetSmart: 'ضغط متوازن فائق (Balanced)',
     presetSmartDesc: 'توازن مثالي بين أعلى نسبة تقليص للحجم مع جودة مطابقة للأصل بالعين المجردة.',
     presetSmartEst: 'توفير متوقع: 60% – 85%',
     presetLossless: 'ضغط هيكلي نقي (Lossless)',
@@ -63,9 +63,9 @@ const translations = {
     toastNoFiles: 'يرجى إضافة ملفات PDF أولاً'
   },
   en: {
-    title: 'Smart PDF Compressor',
+    title: 'PDF Compressor Pro',
     tagline: 'Extreme Compression & Crisp Quality',
-    heroBadge: 'Smart Adaptive Compression Engine 2026',
+    heroBadge: 'Advanced High-Performance Engine',
     heroTitle: 'Compress PDF Files <span class="text-gradient">To The Maximum</span> Without Quality Loss',
     heroDesc: 'Shrink your PDFs, books, and documents by up to 85% instantly while preserving crystal-sharp text and graphics.',
     privacyBadge: '100% Privacy & Security — Everything is processed locally in your browser. No files uploaded.',
@@ -73,7 +73,7 @@ const translations = {
     dropSubtitle: 'or click to browse single or multiple files from your computer',
     browseBtn: 'Select PDF Files',
     strategyTitle: 'Compression Strategy & Preset',
-    presetSmart: 'Smart Extreme (Recommended)',
+    presetSmart: 'Balanced Compression (Recommended)',
     presetSmartDesc: 'Ideal balance between maximum size reduction and visual perfection.',
     presetSmartEst: 'Expected savings: 60% – 85%',
     presetLossless: 'Pure Lossless',
