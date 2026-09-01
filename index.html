@@ -78,7 +78,8 @@
     <section class="hero-section">
       <div class="badge-pill">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+          <polyline points="22 4 12 14.01 9 11.01"></polyline>
         </svg>
         <span>محرك ضغط متقدم وعالي الدقة</span>
       </div>
@@ -141,10 +142,11 @@
           <div class="preset-card-top">
             <div class="preset-icon-badge">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
               </svg>
             </div>
-            <span class="preset-tag">موصى به ⭐</span>
+            <span class="preset-tag">موصى به</span>
           </div>
           <h4 class="preset-name">ضغط متوازن فائق (Balanced)</h4>
           <p class="preset-desc">توازن مثالي بين أعلى نسبة تقليص للحجم مع جودة مطابقة للأصل بالعين المجردة.</p>
@@ -249,7 +251,9 @@
         <div class="queue-actions">
           <button id="compressAllBtn" class="btn-primary">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"></path>
+              <path d="M12 12v9"></path>
+              <path d="m8 17 4 4 4-4"></path>
             </svg>
             <span>بدء ضغط جميع الملفات</span>
           </button>
@@ -350,14 +354,14 @@
       <div class="modal-body">
         <div class="comparison-view-container">
           <div class="preview-column">
-            <span class="preview-col-title">📄 النسخة الأصلية</span>
+            <span class="preview-col-title">النسخة الأصلية</span>
             <div class="preview-canvas-wrapper">
               <img id="modalOrigImg" alt="Original Preview">
             </div>
           </div>
 
           <div class="preview-column">
-            <span class="preview-col-title">⚡ النسخة المضغوطة</span>
+            <span class="preview-col-title">النسخة المضغوطة</span>
             <div class="preview-canvas-wrapper">
               <img id="modalCompImg" alt="Compressed Preview">
             </div>

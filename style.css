@@ -11,17 +11,17 @@
   --bg-card-hover: rgba(31, 41, 61, 0.85);
   --bg-glass: rgba(255, 255, 255, 0.03);
   --border-glass: rgba(255, 255, 255, 0.08);
-  --border-glass-active: rgba(99, 102, 241, 0.4);
+  --border-glass-active: rgba(37, 99, 235, 0.5);
 
   /* Accents */
-  --accent-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
-  --accent-gradient-glow: linear-gradient(135deg, rgba(99, 102, 241, 0.4) 0%, rgba(217, 70, 239, 0.4) 100%);
-  --accent-cyan: #06b6d4;
+  --accent-gradient: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  --accent-gradient-glow: linear-gradient(135deg, rgba(37, 99, 235, 0.3) 0%, rgba(29, 78, 216, 0.3) 100%);
+  --accent-cyan: #0284c7;
   --accent-emerald: #10b981;
   --accent-amber: #f59e0b;
-  --accent-rose: #f43f5e;
-  --accent-indigo: #6366f1;
-  --accent-purple: #8b5cf6;
+  --accent-rose: #ef4444;
+  --accent-indigo: #2563eb;
+  --accent-purple: #3b82f6;
 
   /* Typography */
   --text-primary: #f8fafc;
@@ -32,33 +32,32 @@
   --glass-blur: blur(16px);
   --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
   --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
-  --shadow-glow: 0 0 30px -5px rgba(99, 102, 241, 0.3);
-  --shadow-glow-emerald: 0 0 30px -5px rgba(16, 185, 129, 0.3);
+  --shadow-glow: 0 0 20px -5px rgba(37, 99, 235, 0.25);
+  --shadow-glow-emerald: 0 0 20px -5px rgba(16, 185, 129, 0.25);
 
   /* Transitions & Border Radius */
   --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 20px;
-  --radius-xl: 28px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
   --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-bounce: 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  --transition-bounce: 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 /* Light Theme Variables */
 body.light-theme {
-  --bg-primary: #f1f5f9;
+  --bg-primary: #f8fafc;
   --bg-secondary: #ffffff;
-  --bg-tertiary: #e2e8f0;
-  --bg-card: rgba(255, 255, 255, 0.85);
-  --bg-card-hover: rgba(255, 255, 255, 0.95);
+  --bg-tertiary: #f1f5f9;
+  --bg-card: rgba(255, 255, 255, 0.95);
+  --bg-card-hover: rgba(255, 255, 255, 1);
   --bg-glass: rgba(0, 0, 0, 0.02);
   --border-glass: rgba(0, 0, 0, 0.08);
-  --border-glass-active: rgba(99, 102, 241, 0.5);
+  --border-glass-active: rgba(37, 99, 235, 0.5);
   --text-primary: #0f172a;
   --text-secondary: #475569;
   --text-muted: #94a3b8;
-  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
 }
 
 /* Reset & Base Styles */
@@ -103,35 +102,34 @@ body[dir="ltr"] {
   position: absolute;
   border-radius: 50%;
   filter: blur(120px);
-  opacity: 0.18;
+  opacity: 0.1;
   animation: floatOrb 20s infinite alternate ease-in-out;
 }
 
 .glow-orb-1 {
   width: 500px;
   height: 500px;
-  background: #6366f1;
+  background: #1e40af;
   top: -100px;
   right: -100px;
 }
 
 .glow-orb-2 {
-  width: 600px;
-  height: 600px;
-  background: #d946ef;
-  bottom: -150px;
-  left: -150px;
+  width: 400px;
+  height: 400px;
+  background: #0284c7;
+  bottom: -50px;
+  left: -50px;
   animation-delay: -7s;
 }
 
 .glow-orb-3 {
-  width: 450px;
-  height: 450px;
-  background: #06b6d4;
+  width: 350px;
+  height: 350px;
+  background: #0f766e;
   top: 40%;
-  left: 30%;
-  opacity: 0.1;
-  animation-delay: -12s;
+  left: 50%;
+  animation-delay: -14s;
 }
 
 @keyframes floatOrb {
