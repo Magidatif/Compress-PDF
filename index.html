@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ضاغط PDF الذكي | ضغط فائق بأعلى جودة ممكنة</title>
+  <meta name="description" content="برنامج متطور لضغط وتقليل حجم ملفات PDF لأقصى درجة ممكنة مع الحفاظ التام على جودة ووضوح النصوص والصور محلياً وبخصوصية 100%.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Style CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- PDF.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <!-- PDF-Lib CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+  <!-- JSZip CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body>
+
+  <!-- Ambient Light Orbs -->
+  <div class="ambient-glow" aria-hidden="true">
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
+  </div>
+
+  <div class="app-container">
+
+    <!-- Header Bar -->
+    <header class="app-header">
+      <div class="brand-wrapper">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="12" y1="18" x2="12" y2="12"></line>
+            <polyline points="9 15 12 18 15 15"></polyline>
+          </svg>
+        </div>
+        <div>
+          <h1 class="brand-title">ضاغط PDF الذكي</h1>
+          <p class="brand-tagline">Smart Extreme PDF Compressor</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button id="themeToggleBtn" class="icon-btn" title="تبديل المظهر (Dark / Light)">
+          <svg id="themeIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <span id="themeLabel">المظهر</span>
+        </button>
+
+        <button id="langToggleBtn" class="icon-btn" title="تغيير اللغة">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          <span id="langLabel">English</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="badge-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+        </svg>
+        <span>تقنية الضغط الذكي التكيفي 2026</span>
+      </div>
+      <h2 class="hero-title">
+        ضغط ملفات PDF <span class="text-gradient">لأقصى درجة ممكنة</span> مع بقاء الجودة فائقة الوضوح
+      </h2>
+      <p class="hero-desc">
+        قلّل حجم مستنداتك وكتبك وملفاتك بنسبة تصل إلى 85% فورياً، مع الحفاظ الكامل على دقة النصوص، الرسوم والصور.
+      </p>
+      <div class="privacy-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        </svg>
+        <span>خصوصية وأمان 100% — المعالجة تتم محلياً بالكامل على متصفحك دون رفع الملفات لأي خادم.</span>
+      </div>
+    </section>
+
+    <!-- Upload Dropzone -->
+    <div id="dropZone" class="dropzone-container" tabindex="0">
+      <input type="file" id="fileInput" accept="application/pdf" multiple style="display: none;">
+      <div class="dropzone-content">
+        <div class="dropzone-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="17 8 12 3 7 8"></polyline>
+            <line x1="12" y1="3" x2="12" y2="15"></line>
+          </svg>
+        </div>
+        <h3 class="dropzone-title">اسحب وأفلت ملفات الـ PDF هنا</h3>
+        <p class="dropzone-subtitle">أو انقر لاختيار ملف أو عدة ملفات معاً من جهازك</p>
+        <button type="button" class="btn-upload-trigger" id="browseFilesBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="12" y1="18" x2="12" y2="12"></line>
+            <line x1="9" y1="15" x2="15" y2="15"></line>
+          </svg>
+          اختيار ملفات PDF
+        </button>
+      </div>
+    </div>
+
+    <!-- Compression Mode Settings -->
+    <div class="settings-card">
+      <div class="settings-header">
+        <div class="settings-title-group">
+          <div class="settings-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+          </div>
+          <h3>مستوى واستراتيجية الضغط</h3>
+        </div>
+      </div>
+
+      <div class="presets-grid">
+        <!-- Preset 1: Smart Balanced (Recommended) -->
+        <div class="preset-card active" data-mode="smart">
+          <div class="preset-card-top">
+            <div class="preset-icon-badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+              </svg>
+            </div>
+            <span class="preset-tag">موصى به ⭐</span>
+          </div>
+          <h4 class="preset-name">ضغط ذكي فائق (Smart)</h4>
+          <p class="preset-desc">توازن مثالي بين أعلى نسبة تقليص للحجم مع جودة مطابقة للأصل بالعين المجردة.</p>
+          <span class="preset-estimate">توفير متوقع: 60% – 85%</span>
+        </div>
+
+        <!-- Preset 2: Lossless -->
+        <div class="preset-card" data-mode="lossless">
+          <div class="preset-card-top">
+            <div class="preset-icon-badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              </svg>
+            </div>
+            <span class="preset-tag">بدون أي فقدان</span>
+          </div>
+          <h4 class="preset-name">ضغط هيكلي نقي (Lossless)</h4>
+          <p class="preset-desc">تنظيف الميتاداتا وإعادة تنظيم الهيكل الداخلي بدون إعادة ترميز الصور نهائياً.</p>
+          <span class="preset-estimate">توفير متوقع: 15% – 40%</span>
+        </div>
+
+        <!-- Preset 3: Maximum Squeeze -->
+        <div class="preset-card" data-mode="max">
+          <div class="preset-card-top">
+            <div class="preset-icon-badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"></path>
+                <path d="M12 12v9"></path>
+                <path d="m8 17 4 4 4-4"></path>
+              </svg>
+            </div>
+            <span class="preset-tag">أقصى تقليص</span>
+          </div>
+          <h4 class="preset-name">أقصى ضغط (Max Squeeze)</h4>
+          <p class="preset-desc">مخصص للكتب والمستندات الضخمة لتقليل الحجم لأقل حد ممكن لمشاركتها بسهولة عبر البريد.</p>
+          <span class="preset-estimate">توفير متوقع: 75% – 90%</span>
+        </div>
+
+        <!-- Preset 4: Custom -->
+        <div class="preset-card" data-mode="custom">
+          <div class="preset-card-top">
+            <div class="preset-icon-badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="4" y1="21" x2="4" y2="14"></line>
+                <line x1="4" y1="10" x2="4" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12" y2="3"></line>
+                <line x1="20" y1="21" x2="20" y2="16"></line>
+                <line x1="20" y1="12" x2="20" y2="3"></line>
+                <line x1="1" y1="14" x2="7" y2="14"></line>
+                <line x1="9" y1="8" x2="15" y2="8"></line>
+                <line x1="17" y1="16" x2="23" y2="16"></line>
+              </svg>
+            </div>
+            <span class="preset-tag">متقدم</span>
+          </div>
+          <h4 class="preset-name">تخصيص يدوي (Custom)</h4>
+          <p class="preset-desc">ضبط يدوي دقيق لنسبة جودة الصور، كثافة الـ DPI، ومسح الميتاداتا.</p>
+          <span class="preset-estimate">تحكم كامل</span>
+        </div>
+      </div>
+
+      <!-- Custom Settings Drawer -->
+      <div id="customDrawer" class="custom-controls-drawer">
+        <div class="slider-group">
+          <div class="slider-header">
+            <span>جودة الصور (Image Quality):</span>
+            <span id="qualityVal" class="slider-val">82%</span>
+          </div>
+          <input type="range" id="qualitySlider" min="20" max="95" value="82" step="1">
+        </div>
+
+        <div class="slider-group">
+          <div class="slider-header">
+            <span>كثافة النقط / الوضوح (DPI Resolution Scale):</span>
+            <span id="scaleVal" class="slider-val">1.6x (~180 DPI)</span>
+          </div>
+          <input type="range" id="scaleSlider" min="1.0" max="2.4" value="1.6" step="0.1">
+        </div>
+
+        <div class="checkbox-group">
+          <label class="custom-checkbox-label">
+            <input type="checkbox" id="grayscaleCheck">
+            <span>تحويل المستند إلى تدرجات الرمادي (Grayscale) لتقليل إضافي للحجم</span>
+          </label>
+          <label class="custom-checkbox-label">
+            <input type="checkbox" id="metadataCheck" checked>
+            <span>مسح البيانات الوصفية والوسوم الخفية الفائضة (Metadata Strip)</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Queue & Batch Processing Section -->
+    <section id="queueSection" class="queue-section">
+      <div class="queue-header-bar">
+        <div class="queue-stats-summary">
+          <span>قائمة الملفات: <strong id="fileCountBadge">0</strong> ملف</span>
+          <span>الحجم الإجمالي الأصلي: <strong id="totalOrigSizeBadge">0 MB</strong></span>
+        </div>
+
+        <div class="queue-actions">
+          <button id="compressAllBtn" class="btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+            <span>بدء ضغط جميع الملفات</span>
+          </button>
+          
+          <button id="downloadZipBtn" class="btn-secondary" disabled>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span>تحميل الكل كـ ZIP</span>
+          </button>
+
+          <button id="clearAllBtn" class="btn-danger">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="3 6 5 6 21 6"></polyline>
+              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+            </svg>
+            <span>مسح الكل</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- File Cards List -->
+      <div id="filesList" class="files-list"></div>
+
+      <!-- Overall Summary Card -->
+      <div id="overallCard" class="overall-summary-card" style="display: none;">
+        <div class="stat-item">
+          <span class="stat-label">الحجم الأصلي الإجمالي</span>
+          <span id="statTotalOrig" class="stat-value">0 MB</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">الحجم بعد الضغط</span>
+          <span id="statTotalComp" class="stat-value highlight-indigo">0 MB</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">المساحة الموفرة</span>
+          <span id="statTotalSaved" class="stat-value highlight-emerald">0 MB</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">نسبة التقليص الكلية</span>
+          <span id="statTotalRatio" class="stat-value highlight-emerald">0%</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust & Feature Highlights -->
+    <section class="features-grid">
+      <div class="feature-box">
+        <div class="feature-icon-wrapper">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        </div>
+        <h4>أمان وحفظ خصوصية تام</h4>
+        <p>لا يتم إرسال ملفاتك أو مستنداتك الحساسة لأي خادم خارجي عبر الإنترنت؛ كل خطوة تتم محلياً بالكامل على متصفحك.</p>
+      </div>
+
+      <div class="feature-box">
+        <div class="feature-icon-wrapper">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+        </div>
+        <h4>معالجة فورية فائقة السرعة</h4>
+        <p>معالجة متعددة المهام تستغل قدرات جهازك لضغط مستندات متعددة في وقت قياسي وبدون انتظار.</p>
+      </div>
+
+      <div class="feature-box">
+        <div class="feature-icon-wrapper">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+            <polyline points="16 7 22 7 22 13"></polyline>
+          </svg>
+        </div>
+        <h4>أقصى تقليص مع دقة بلورية</h4>
+        <p>خوارزميات ذكية تعيد ضغط الصور المضمنة وتنظف الهيكل الداخلي مع الحفاظ التام على حدة النصوص والرسومات.</p>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Before / After Comparison Modal -->
+  <div id="compareModal" class="modal-overlay">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h3 class="modal-title">مقارنة دقة الملف قبل وبعد الضغط</h3>
+        <button id="closeModalBtn" class="modal-close-btn">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="comparison-view-container">
+          <div class="preview-column">
+            <span class="preview-col-title">📄 النسخة الأصلية</span>
+            <div class="preview-canvas-wrapper">
+              <img id="modalOrigImg" alt="Original Preview">
+            </div>
+          </div>
+
+          <div class="preview-column">
+            <span class="preview-col-title">⚡ النسخة المضغوطة</span>
+            <div class="preview-canvas-wrapper">
+              <img id="modalCompImg" alt="Compressed Preview">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button id="modalDownloadBtn" class="btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          تحميل هذا الملف المضغوط
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- Core App Scripts -->
+  <script src="compressor.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
